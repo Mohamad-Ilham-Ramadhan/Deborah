@@ -1,0 +1,72 @@
+// Mixin
+
+.button-pill(@padding-vertical; @padding-horizontal; @font-size; @line-height;) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: (@padding-vertical + @padding-horizontal * 2);
+}
+// variants
+.btn-pill {
+    border: none;
+    font-weight: bold;
+    .button-pill(10px; 20px; 16px; 20px;);
+    &:hover {
+        background-color: @brand-success !important;
+    }
+
+    &.pill-small {
+        .button-pill(15px; 15px; 16px; 20px;);
+    }
+
+    &.pill-large {
+        .button-pill(20px; 25px; 18px; 18px;);
+        font-weight: bold;
+    }
+}
+.btn-apple {
+    .icon {
+        font-size: 45px;
+    }
+    div {
+        margin-left: 5px;
+        .ava {
+            font-size: 15px;
+            display: block;
+            font-weight: normal;
+        }
+        .app {
+            font-size: 25px;
+            display: block;
+            font-weight: normal;
+        }
+    }
+
+    &.apple-small {
+        .icon {
+            font-size: 33px;
+        }
+        div {
+            margin-left: 3px;
+            .ava {
+                font-size: 13px;
+                display: block;
+                font-weight: normal;
+            }
+            .app {
+                font-size: 17px;
+                display: block;
+                font-weight: normal;
+                margin-top: -3px;
+            }
+        }
+    }
+}
+
+
+.btn-success {
+    border: none;
+    &:hover {
+        background-color: @brand-danger !important;
+    }
+}
